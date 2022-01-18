@@ -1,0 +1,10 @@
+%div.card
+  %div.f-block
+    = form_tag movies_path, :method => :post do
+      %div.header
+        %h2 Create New Movie
+      %div.body.p-0
+        = render :partial => 'movie_form'
+      %div.footer
+        = submit_tag "Save changes" , class: "btn btn-primary"
+        = link_to 'Cancel', movies_path , class: "btn btn-warning"

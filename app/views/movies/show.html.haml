@@ -1,0 +1,28 @@
+%div.card
+  %div.header
+    %h2 Details about : #{@movie.title}
+  %div.body.p-0
+    %dl
+      %div.div-list
+        %dt Title: 
+        %dd 
+          = @movie.title
+
+      %div.div-list
+        %dt Rating: 
+        %dd 
+          = @movie.rating
+
+      %div.div-list
+        %dt Released on: 
+        %dd 
+          = @movie.release_date.strftime("%B %d, %Y")
+
+      %div.div-list
+        %dt Description:
+        %dd 
+          = @movie.description
+    %div.footer
+      = link_to 'Edit info', edit_movie_path(@movie),class: "btn btn-seccondary"
+      = button_to "Delete", movie_path(@movie), :method => :delete ,class: "btn btn-danger"
+      = link_to 'Back to movie list', movies_path ,class: "btn btn-warning"
